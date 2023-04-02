@@ -1,0 +1,154 @@
+<html>
+<head>
+  <style>
+    h1{
+       text-align: center;
+       color: green;
+       }
+
+    h1:hover,h1:active{
+    color: red;
+    font-size: 280%;
+    }
+
+    label {
+      padding: 12px 35px 15px 0;
+      display: inline-block;
+      font-size: 18px;
+      width: 250px;
+      text-align: right;
+
+    }
+
+    input{
+       width: 300px;
+       text-align: right;
+    }
+
+    select {
+        width: 150px;
+        margin: 10px;
+    }
+    select:focus {
+        min-width: 150px;
+        width: auto;
+        text-align: right;
+    }
+
+
+    * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.buttons {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 10px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+.bg-nav{
+   background-color: orange;
+
+}
+
+  </style>
+</head>
+
+<body class="bg-nav">
+    <h1>CAR PRICE PREDICTION</h1>
+    <div>
+
+  <form action="/result" method="POST">
+    <label for="km_driven" >Kms_Driven</label>
+    <input type="text" id="km_driven" name="km_driven">
+
+    <br>
+    <label for="fuel">Fuel_Type</label>
+    <select id="fuel" name="fuel">
+      <option value="0">Petrol</option>
+      <option value="1">Diesel</option>
+      <option value="2">CNG</option>
+      <option value="3">LPG</option>
+      <option value="4">Electric</option>
+    </select>
+
+    <br>
+    <label for="seller_type">Seller_Type</label>
+    <select id="seller_type" name="seller_type">
+      <option value="0">Individual</option>
+      <option value="1">Dealer</option>
+      <option value="2">Trustmark Dealer</option>
+    </select>
+
+
+    <br>
+    <label for="transmission">Transmission</label>
+    <select id="transmission" name="transmission">
+      <option value="0">Manual</option>
+      <option value="1">Automatic</option>
+    </select>
+
+    <br>
+    <label for="owner">Owner</label>
+    <select id="owner" name="owner">
+      <option value="0">First Owner</option>
+      <option value="1">Second Owner</option>
+      <option value="2">Third Owner</option>
+      <option value="3">Fourth & Above Owner</option>
+      <option value="4">Test Drive Car</option>
+    </select>
+
+    <br>
+
+    <label for="no_year" >No_year</label>
+    <input type="text" id="no_year" name="no_year">
+
+
+      <br>
+    <br>
+
+      <div class="buttons">
+    <button class="btn-hover color-1">SUBMIT</button>
+
+      </div>
+  </form>
+        <h1> {{ prediction }}</h1>
+    </div>
+</body>
+</html>
